@@ -177,17 +177,15 @@ async def doc(bot, update):
 	            progress=progress_for_pyrogram,
 	            progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ ʟᴀᴢʏ ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time   )) 
         except Exception as e: 
-            await ms.edit(f" Erro {e}") 
-            os.remove(file_path)
-            if ph_path:
-              os.remove(ph_path)
-            return 
-        await ms.delete() 
-        os.remove(file_path) 
+        await ms.edit(f" Erro {e}") 
+        os.remove(file_path)
         if ph_path:
-           os.remove(ph_path) 
-    except Exception as e:
-        logger.error(f"error 2 : {e}")
+          os.remove(ph_path)
+        return 
+    await ms.delete() 
+    os.remove(file_path) 
+    if ph_path:
+       os.remove(ph_path)
 
 # Born to make history @LazyDeveloper !
 @Client.on_callback_query(filters.regex(r"^next"))
