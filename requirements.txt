@@ -11,11 +11,11 @@ aiohttp
 pytz
 hachoir
 Pillow
-humanize==4.6.0
+humanize
 aiofiles
-dnspython==2.3.0
+dnspython
 pynewtonmath
-python-dotenv==0.21.1
+python-dotenv<=0.20.0
 apscheduler
 pyshorteners
 psutil
@@ -31,4 +31,3 @@ filetype
 tldextract
 lk21
 Flask==2.2.2
-
