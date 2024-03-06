@@ -1,10 +1,11 @@
- from utils import temp
- from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
- from pyrogram import Client, filters
- from info import *
+from utils import temp
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import Client, filters
+from info import *
+import openai
 
-@Client.on_message(filters.private & filters.text & filters.incoming)
-async def pm_text(bot, message):
+@Client.on_message(filters.private & filters.text)
+async def lazy_answer(client, message):
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
