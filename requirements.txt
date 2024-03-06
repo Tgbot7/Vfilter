@@ -11,11 +11,11 @@ aiohttp
 pytz
 hachoir
 Pillow
-humanize
+humanize==4.6.0
 aiofiles
-dnspython
+dnspython==2.3.0
 pynewtonmath
-python-dotenv<=0.20.0
+python-dotenv==0.21.1
 apscheduler
 pyshorteners
 psutil
