@@ -44,8 +44,8 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001932188496))
-LAZY_GROUP_LOGS = int(environ.get('LAZY_GROUP_LOGS', -1001932188496))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ))
+LAZY_GROUP_LOGS = int(environ.get('LAZY_GROUP_LOGS', ))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Sk_Request')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), False)
@@ -122,8 +122,8 @@ if HAS_SSL:
     URL = "https://{}/".format(FQDN)
 else:
     URL = "http://{}/".format(FQDN)
-BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001987654567")).split())) 
-OWNER_USERNAME = "LazyDeveloper"
+BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001698379010")).split())) 
+OWNER_USERNAME = "skcreator7"
 
 
 # URL UPLOADING
