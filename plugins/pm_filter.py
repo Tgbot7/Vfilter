@@ -187,7 +187,7 @@ async def doc(bot, update):
         if ph_path:
            os.remove(ph_path) 
     except Exception as e:
-        logger.error(f"error 2 : {e}")
+        
 
 # Born to make history @LazyDeveloper !
 @Client.on_callback_query(filters.regex(r"^next"))
