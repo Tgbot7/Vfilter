@@ -188,6 +188,14 @@ async def doc(bot, update):
            os.remove(ph_path) 
     except Exception as e:
         logger.error(f"error 2 : {e}")
+	try:
+    # Attempt to execute the main code block
+    # If an exception occurs, it will be caught here
+    # Perform specific actions based on the exception
+    except Exception as e:
+    # Handle the exception
+    # Log the error or perform other actions
+    finally:
 
 # Born to make history @LazyDeveloper !
 @Client.on_callback_query(filters.regex(r"^next"))
