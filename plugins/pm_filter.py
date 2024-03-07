@@ -188,8 +188,7 @@ async def doc(bot, update):
         if ph_path:
            os.remove(ph_path) 
     except Exception as e:
-        logger.error(f"error 2 : {e}")
-	await ms.edit(f"Error occurred: {e}") 
+        logger.error(f"error 2 : {e}") 
         os.remove(file_path)
         if ph_path:
             os.remove(ph_path)
