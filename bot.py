@@ -40,6 +40,8 @@ from util.keepalive import ping_server
 from lazybot.clients import initialize_clients
 
 
+ppath = "plugins/*.py"
+files = glob.glob(ppath)
 LazyPrincessBot.start()
 loop = asyncio.get_event_loop()
 
