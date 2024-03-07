@@ -48,7 +48,7 @@ LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ))
 LAZY_GROUP_LOGS = int(environ.get('LAZY_GROUP_LOGS', ))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Sk_Request')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
-IMDB = is_enabled((environ.get('IMDB', "True")), False)
+IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "🎬<b>[{file_caption}](https://t.me/skcreator7)</b>")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
@@ -76,7 +76,7 @@ REQ_CHANNEL = int(environ.get('REQ_CHANNEL'))
 # LAZY_AI_LOGS = int(environ.get("LAZY_AI_LOGS","")) #GIVE YOUR NEW LOG CHANNEL ID TO STORE MESSAGES THAT THEY SEARCH IN BOT PM.... [ i have added this to keep an eye on the users message, to avoid misuse of LazyPrincess ]
 
 # Requested Content template variables ---
-ADMIN_USRNM = environ.get('ADMIN_USRNM','mrlDeViLI') # WITHOUT @
+ADMIN_USRNM = environ.get('ADMIN_USRNM','SKadminrobot') # WITHOUT @
 MAIN_CHANNEL_USRNM = environ.get('MAIN_CHANNEL_USRNM','Skcreator7') # WITHOUT @
 DEV_CHANNEL_USRNM = environ.get('DEV_CHANNEL_USRNM','skcreatorBackup') # WITHOUT @
 LAZY_YT_HANDLE = environ.get('LAZY_YT_HANDLE','Skcreator7')  # WITHOUT @ [  add only handle - don't add full url  ] 
