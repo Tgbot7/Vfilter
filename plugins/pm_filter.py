@@ -103,13 +103,13 @@ async def doc(bot, update):
         new_filename = new_name.split(":-")[1]
         file = update.message.reply_to_message
         file_path = f"downloads/{new_filename}"
-        ms = await update.message.edit("\nᴄʀᴇᴀᴛɪɴɢ ꜱᴋ ᴅᴀᴛᴀ...")
+        ms = await update.message.edit("\n༻☬ད 𝘽𝙪𝙞𝙡𝙙𝙞𝙣𝙜 𝙇𝙖𝙯𝙮 𝙈𝙚𝙩𝙖𝘿𝙖𝙩𝙖...")
         c_time = time.time()
         try:
             path = await bot.download_media(
                     message=file,
                     progress=progress_for_pyrogram,
-                    progress_args=("**\nᴄᴏɴᴠᴇʀᴛɪɴɢ ꜱᴋ... ♡♪**", ms, c_time))
+                    progress_args=("**\n  ღ♡ ꜰɪʟᴇ ᴜɴᴅᴇʀ ᴄᴏɴꜱᴛʀᴜᴄᴛɪᴏɴ... ♡♪**", ms, c_time))
         except Exception as e:
             await ms.edit(e)
             return 
@@ -137,7 +137,7 @@ async def doc(bot, update):
                  await ms.edit(text=f"Your caption Error unexpected keyword ●> ({e})")
                  return 
         else:
-            caption = f"**{new_filename}** \n\n⚡️ᵁᵖˡᵒᵃᵈᵉᵈ ᴮʸ: @ꜱᴋᴄʀᴇᴀᴛᴏʀ7"
+            caption = f"**{new_filename}** \n\n⚡️Data costs: `{filesize}`"
         if (media.thumbs or c_thumb):
             if c_thumb:
                ph_path = await bot.download_media(c_thumb) 
@@ -147,7 +147,7 @@ async def doc(bot, update):
             img = Image.open(ph_path)
             img.resize((320, 320))
             img.save(ph_path, "JPEG")
-        await ms.edit("Cᴏɴᴠᴇʀᴛɪɴɢ Sᴋ Fɪʟᴇꜱ")
+        await ms.edit("三 𝘗𝘳𝘦𝘱𝘢𝘳𝘪𝘯𝘨 𝘵𝘰 𝘳𝘦𝘤𝘦𝘪𝘷𝘦 𝘓𝘢𝘻𝘺 𝘧𝘪𝘭𝘦...︻デ═一")
         c_time = time.time() 
         try:
            if type == "document":
@@ -157,7 +157,7 @@ async def doc(bot, update):
                        thumb=ph_path, 
                        caption=caption, 
                        progress=progress_for_pyrogram,
-                       progress_args=( "**Uᴘʟᴏᴀᴅɪɴɢ Sᴋ Fɪʟᴇꜱ**",  ms, c_time))
+                       progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ ʟᴀᴢʏ ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time))
            elif type == "video": 
                await bot.send_video(
 	            update.message.chat.id,
@@ -185,7 +185,9 @@ async def doc(bot, update):
         await ms.delete() 
         os.remove(file_path) 
         if ph_path:
-           os.remove(ph_path)            
+           os.remove(ph_path) 
+    except Exception as e:
+        logger.error(f"error 2 : {e}")
 
 # Born to make history @LazyDeveloper !
 @Client.on_callback_query(filters.regex(r"^next"))
