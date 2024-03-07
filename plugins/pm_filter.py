@@ -29,7 +29,8 @@ from database.ia_filterdb import Media, get_file_details, get_search_results,get
 from database.lazy_utils import progress_for_pyrogram, convert, humanbytes
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-import os 
+import os
+import logging
 from Script import script
 import humanize
 from PIL import Image
@@ -188,14 +189,10 @@ async def doc(bot, update):
            os.remove(ph_path) 
     except Exception as e:
         logger.error(f"error 2 : {e}")
-	try:
-    # Attempt to execute the main code block
-    # If an exception occurs, it will be caught here
-    # Perform specific actions based on the exception
-    except Exception as e:
-    # Handle the exception
-    # Log the error or perform other actions
-    finally:
+	await ms.edit(f"Error occurred: {e}") 
+        os.remove(file_path)
+        if ph_path:
+            os.remove(ph_path)
 
 # Born to make history @LazyDeveloper !
 @Client.on_callback_query(filters.regex(r"^next"))
