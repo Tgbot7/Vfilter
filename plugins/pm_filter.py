@@ -187,7 +187,6 @@ async def doc(bot, update):
         if ph_path:
            os.remove(ph_path)            
 
-
 # Born to make history @LazyDeveloper !
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
