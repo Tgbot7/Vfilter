@@ -191,24 +191,20 @@ async def doc(bot, update):
 # Born to make history @LazyDeveloper !
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
+
     ident, req, key, offset = query.data.split("_")
-    print(f"REQ => {req}")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer(
-                        f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
-                        show_alert=True,
-                    )
+        return await query.answer("This Message is not for you dear. Don't worry you can send new one !", show_alert=True)
     try:
         offset = int(offset)
     except:
         offset = 0
     search = BUTTONS.get(key)
-    chat_id = query.message.chat.id
     if not search:
         await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
         return
 
-    files, n_offset, total = await get_search_results_badAss_LazyDeveloperr(chat_id, search, offset=offset, filter=True)
+    files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
     try:
         n_offset = int(n_offset)
     except:
@@ -216,8 +212,6 @@ async def next_page(bot, query):
 
     if not files:
         return
-    temp.GETALL[key] = files
-    temp.SHORT[query.from_user.id] = query.message.chat.id
     settings = await get_settings(query.message.chat.id)
         # if query.from_user.id in download_counts and download_counts[query.from_user.id]['date'] == current_date:
         #     if download_counts[query.from_user.id]['count'] >= DOWNLOAD_LIMIT:
