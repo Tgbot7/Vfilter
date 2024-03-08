@@ -188,7 +188,7 @@ async def doc(bot, update):
         if ph_path:
            os.remove(ph_path) 
     except Exception as e:
-        logger.error(f"error 2 : {e}") 
+        logger.error(f"downloads") 
         os.remove(file_path)
         if ph_path:
             os.remove(ph_path)
