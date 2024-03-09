@@ -158,7 +158,7 @@ async def doc(bot, update):
                        thumb=ph_path, 
                        caption=caption, 
                        progress=progress_for_pyrogram,
-                       progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ ʟᴀᴢʏ ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time))
+                       progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ Sk ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time))
            elif type == "video": 
                await bot.send_video(
 	            update.message.chat.id,
@@ -167,7 +167,7 @@ async def doc(bot, update):
 	            thumb=ph_path,
 	            duration=duration,
 	            progress=progress_for_pyrogram,
-	            progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ ʟᴀᴢʏ ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time))
+	            progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ sk ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time))
            elif type == "audio": 
                await bot.send_audio(
 	            update.message.chat.id,
@@ -176,7 +176,7 @@ async def doc(bot, update):
 	            thumb=ph_path,
 	            duration=duration,
 	            progress=progress_for_pyrogram,
-	            progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ ʟᴀᴢʏ ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time   )) 
+	            progress_args=( "**⎝⎝✧ ʀᴇᴄɪᴇᴠɪɴɢ ꜰɪʟᴇ ꜰʀᴏᴍ sk ꜱᴇʀᴠᴇʀ ✧⎠⎠**",  ms, c_time   )) 
         except Exception as e: 
             await ms.edit(f" Erro {e}") 
             os.remove(file_path)
@@ -237,25 +237,7 @@ async def next_page(bot, query):
                             ),
                         ]
                         for file in files
-                    ]
-                elif query.from_user.id in MY_USERS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(
-                                text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
-                            ),
-                        ]
-                        for file in files
-                    ]
-                elif query.from_user.id in LZURL_PRIME_USERS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(
-                                text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
-                            ),
-                        ]
-                        for file in files
-                        ]
+		    ]
                 elif query.message.chat.id is not None and query.message.chat.id in LAZY_GROUPS:
                     btn = [
                     [
@@ -313,31 +295,7 @@ async def next_page(bot, query):
                         InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
                     ]
                     for file in files
-                ]
-            elif query.from_user.id in MY_USERS:
-                btn = [
-                    [
-                        InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'files#{file.file_id}',),
-                        InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
-                    ]
-                    for file in files
-                ]
-            elif query.from_user.id in LZURL_PRIME_USERS:
-                btn = [
-                    [
-                        InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'files#{file.file_id}',),
-                        InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
-                    ]
-                    for file in files
-                ]
-            elif query.message.chat.id is not None and query.message.chat.id in LAZY_GROUPS:
-                btn = [
-                    [
-                        InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'files#{file.file_id}',),
-                        InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
-                    ]
-                    for file in files
-                ]
+		]
             else:
                 btn = [
                     [
@@ -541,34 +499,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                             ),
                         ]
                         for file in files
-                    ]
-                elif message.from_user.id in MY_USERS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(
-                                text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
-                            ),
-                        ]
-                        for file in files
-                    ]
-                elif message.from_user.id in LZURL_PRIME_USERS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(
-                                text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
-                            ),
-                        ]
-                        for file in files
-                        ]
-                elif message.chat.id is not None and message.chat.id in LAZY_GROUPS:
-                    btn = [
-                    [
-                        InlineKeyboardButton(
-                            text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
-                        ),
-                    ]
-                    for file in files
-                    ]
+		    ]
                 else:
                     btn = [
                         [
@@ -617,31 +548,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
                         ]
                         for file in files
-                    ]
-                elif query.from_user.id in MY_USERS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'files#{file.file_id}',),
-                            InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
-                        ]
-                        for file in files
-                    ]
-                elif query.from_user.id in LZURL_PRIME_USERS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'files#{file.file_id}',),
-                            InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
-                        ]
-                        for file in files
-                    ]
-                elif query.message.chat.id is not None and query.message.chat.id in LAZY_GROUPS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'files#{file.file_id}',),
-                            InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
-                        ]
-                        for file in files
-                    ]
+		    ]
                 else:
                     btn = [
                         [
@@ -1699,34 +1606,7 @@ async def auto_filter(client, msg, spoll=False):
                             ),
                         ]
                         for file in files
-                    ]
-                elif message.from_user.id in MY_USERS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(
-                                text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
-                            ),
-                        ]
-                        for file in files
-                    ]
-                elif message.from_user.id in LZURL_PRIME_USERS:
-                    btn = [
-                        [
-                            InlineKeyboardButton(
-                                text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
-                            ),
-                        ]
-                        for file in files
-                        ]
-                elif message.chat.id is not None and message.chat.id in LAZY_GROUPS:
-                    btn = [
-                    [
-                        InlineKeyboardButton(
-                            text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
-                        ),
-                    ]
-                    for file in files
-                    ]
+		    ]
                 else:
                     btn = [
                         [
@@ -1775,31 +1655,7 @@ async def auto_filter(client, msg, spoll=False):
                         InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
                     ]
                     for file in files
-                ]
-            elif message.from_user.id in MY_USERS:
-                btn = [
-                    [
-                        InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'files#{file.file_id}',),
-                        InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'files#{file.file_id}',),
-                    ]
-                    for file in files
-                ]
-            elif message.from_user.id in LZURL_PRIME_USERS:
-                btn = [
-                    [
-                        InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'{pre}#{file.file_id}',),
-                        InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'{pre}#{file.file_id}',),
-                    ]
-                    for file in files
-                ]
-            elif message.chat.id is not None and message.chat.id in LAZY_GROUPS:
-                btn = [
-                    [
-                        InlineKeyboardButton(text=f"{file.file_name}",callback_data=f'{pre}#{file.file_id}',),
-                        InlineKeyboardButton(text=f"{get_size(file.file_size)}",callback_data=f'{pre}#{file.file_id}',),
-                    ]
-                    for file in files
-                ]
+		]
             else:
                 btn = [
                     [
