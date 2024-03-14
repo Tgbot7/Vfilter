@@ -35,7 +35,7 @@ import asyncio
 from asyncio import sleep
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
-from pyrogram.errors import FloodWait,UserNotParticipant
+from pyrogram.errors import UserNotParticipant
 import humanize
 from info import *
 
