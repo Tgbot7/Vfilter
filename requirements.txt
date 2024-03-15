@@ -1,5 +1,5 @@
 pyrogram==2.0.106
-TgCrypto==1.2.5
+TgCrypto
 pymongo==4.6.2
 motor==3.3.1
 marshmallow==3.20.2
@@ -9,8 +9,8 @@ bs4
 imdbpy==2022.7.9
 aiohttp==3.8.5
 pytz
-hachoir==3.2.0
-Pillow==10.0.1
+hachoir
+Pillow
 humanize
 aiofiles
 dnspython
