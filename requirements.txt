@@ -1,6 +1,6 @@
 pyrogram==2.0.106
 TgCrypto
-pymongo[srv]==4.6.2
+pymongo[srv]==3.12.3
 motor
 marshmallow==3.20.2
 umongo==3.0.1
@@ -13,7 +13,7 @@ hachoir
 Pillow
 humanize
 aiofiles
-dnspython
+dnspython==2.3.0
 pynewtonmath
 python-dotenv<=0.20.0
 apscheduler
