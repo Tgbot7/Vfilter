@@ -31,61 +31,26 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, 
 from lazybot.forcesub import handle_force_subscribe
 from database.add import add_user_to_database
 
-@Client.on_message(filters.private & filters.command(['view_thumb','view_thumbnail','vt']))
-async def viewthumb(client, message):
-    if not message.from_user:
-        return await message.reply_text("What the hell is this...")
-    await add_user_to_database(client, message)
-    if AUTH_CHANNEL:
-      fsub = await handle_force_subscribe(client, message)
-      if fsub == 400:
-        return
+@Client.on_message(filters.private & filters.command(['viewthumb']))
+async def viewthumb(client, message):    
     thumb = await db.get_thumbnail(message.from_user.id)
     if thumb:
        await client.send_photo(
 	   chat_id=message.chat.id, 
-	   photo=thumb,
-       caption=f"Current thumbnail for direct renaming",
-       reply_markup=InlineKeyboardMarkup([
-           [InlineKeyboardButton("🗑️ ᴅᴇʟᴇᴛᴇ ᴛʜᴜᴍʙɴᴀɪʟ" , callback_data="deleteThumbnail")]
-       ]))
+	   photo=thumb)
     else:
         await message.reply_text("😔**Sorry ! No thumbnail found...**😔") 
-
-@Client.on_message(filters.private & filters.command(['del_thumb','delete_thumb','dt']))
+		
+@Client.on_message(filters.private & filters.command(['delthumb']))
 async def removethumb(client, message):
-    if not message.from_user:
-        return await message.reply_text("What the hell is this...")
-    await add_user_to_database(client, message)
-    if AUTH_CHANNEL:
-      fsub = await handle_force_subscribe(client, message)
-      if fsub == 400:
-        return
     await db.set_thumbnail(message.from_user.id, file_id=None)
-    await message.reply_text("**Okay sweetie, I deleted your custom thumbnail for direct renaming. Now I will apply default thumbnail. ✅️**✅️")
-
-@Client.on_message(filters.private & filters.command(['set_thumbnail','set_thumb','st']))
+    await message.reply_text("**Thumbnail deleted successfully**✅️")
+	
+@Client.on_message(filters.private & filters.photo)
 async def addthumbs(client, message):
-    replied = message.reply_to_message
-    
-    if not message.from_user:
-        return await message.reply_text("What the hell is this...")
-    
-    await add_user_to_database(client, message)
-    
-    if AUTH_CHANNEL:
-        fsub = await handle_force_subscribe(client, message)
-        if fsub == 400:
-            return
-        
     LazyDev = await message.reply_text("Please Wait ...")
-        # Check if there is a replied message and it is a photo
-    if replied and replied.photo:
-        # Save the photo file_id as a thumbnail for the user
-        await db.set_thumbnail(message.from_user.id, file_id=replied.photo.file_id)
-        await LazyDev.edit("**✅ Custom thumbnail set successfully!**")
-    else:
-        await LazyDev.edit("**❌ Please reply to a photo to set it as a custom thumbnail.**")
+    await db.set_thumbnail(message.from_user.id, file_id=message.photo.file_id)                
+    await LazyDev.edit("**Thumbnail saved successfully**✅️")
 
 @Client.on_message(filters.private & filters.command(['view_lazy_thumb','vlt']))
 async def viewthumbnail(client, message):    
