@@ -32,7 +32,6 @@ permission of LazyDeveloperr
     # for any error please contact me -> telegram@LazyDeveloperr or insta @LazyDeveloperr 
 
 import asyncio
-from asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant
