@@ -1,4 +1,4 @@
-if [ -z $UPSTREAM_REPO ]
+if [ -z "$UPSTREAM_REPO"]
 then
   echo "Cloning main Repository"
   git clone https://github.com/skcreator7/filterbot.git /filterbot
@@ -9,4 +9,4 @@ fi
 cd /filterbot
 pip3 install -U -r requirements.txt
 echo "Starting Bot...."
-gunicorn app:app & python3 main.py
+gunicorn app:app & python3 bot.py
