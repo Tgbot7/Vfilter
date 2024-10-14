@@ -21,7 +21,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '27967371'))
 API_HASH = environ.get('API_HASH', 'c8c22d9e427b8589236a6cd94a82a244')
-BOT_TOKEN = environ.get('BOT_TOKEN', "5905102389:AAHs3AM823mHYfZH3v9dmHsahruAWm4Hii8")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7912593551:AAGYZFFYP8Gwx-i-qCf20AmB0290nzNTe88")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -48,7 +48,7 @@ LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ))
 LAZY_GROUP_LOGS = int(environ.get('LAZY_GROUP_LOGS', ))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Sk_Request')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), False)
-IMDB = is_enabled((environ.get('IMDB', "True")), True)
+IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "🎬<b>[{file_caption}](https://t.me/skcreator7)</b>")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
