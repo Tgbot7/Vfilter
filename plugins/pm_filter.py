@@ -1755,7 +1755,6 @@ async def auto_filter(client, msg, spoll=False):
             release_date=imdb['release_date'],
             year=imdb['year'],
             genres=imdb['genres'],
-            poster=imdb['poster'],
             plot=imdb['plot'],
             rating=imdb['rating'],
             url=imdb['url'],
