@@ -1222,7 +1222,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]]
             reply_markup_lzdv = InlineKeyboardMarkup(btn_lzdv) 
             reply_markup = InlineKeyboardMarkup(btn)
-            await client.send_message(int(user_id), f"**Yᴏᴜ Hᴀᴠᴇ Tʏᴘᴇᴅ Tʜᴇ Nᴀᴍᴇ Wʀᴏɴɢ. Pʟᴇᴀꜱᴇ Cʜᴇᴄᴋ Tʜᴇ Sᴘᴇʟʟɪɴɢ  `{movie}` \n\nआपने नाम गलत टाइप किया है. कृपया स्पेलिंग जांचें🧐**",, reply_markup=reply_markup)
+            await client.send_message(int(user_id), f"Yᴏᴜ Hᴀᴠᴇ Tʏᴘᴇᴅ Tʜᴇ Nᴀᴍᴇ Wʀᴏɴɢ. Pʟᴇᴀꜱᴇ Cʜᴇᴄᴋ Tʜᴇ Sᴘᴇʟʟɪɴɢ  `{movie}` \n\nआपने नाम गलत टाइप किया है. कृपया स्पेलिंग जांचें🧐",, reply_markup=reply_markup)
             await query.edit_message_text(text=f"- __**User notified successfully sweetie...✅**__\n\n⏳**Status** : Spelling error 🖊.\n🪪**UserID** : `{user_id}`\n🎞**Content** : `{movie}`\n\n\n🦋",reply_markup=reply_markup_lzdv)
         # Delete callback query message
             await query.answer()
@@ -1248,7 +1248,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]]
             reply_markup_lzdv = InlineKeyboardMarkup(btn_lzdv) 
             reply_markup = InlineKeyboardMarkup(btn)
-            await client.send_message(int(user_id), f"**Yᴏᴜ Hᴀᴠᴇ Tʏᴘᴇᴅ Tʜᴇ Nᴀᴍᴇ Wʀᴏɴɢ. Pʟᴇᴀꜱᴇ Cʜᴇᴄᴋ Tʜᴇ Sᴘᴇʟʟɪɴɢ  `{movie}`  \n\nआपने नाम गलत टाइप किया है. कृपया स्पेलिंग जांचें🧐**hai", reply_markup=reply_markup)
+            await client.send_message(int(user_id), f"Yᴏᴜ Hᴀᴠᴇ Tʏᴘᴇᴅ Tʜᴇ Nᴀᴍᴇ Wʀᴏɴɢ. Pʟᴇᴀꜱᴇ Cʜᴇᴄᴋ Tʜᴇ Sᴘᴇʟʟɪɴɢ  `{movie}`  \n\nआपने नाम गलत टाइप किया है. कृपया स्पेलिंग जांचें🧐", reply_markup=reply_markup)
             await query.edit_message_text(text=f"- __**User notified successfully sweetie...✅**__\n\n⏳**Status** : Spelling error 🖊.\n🪪**UserID** : `{user_id}`\n🎞**Content** : `{movie}`\n\n\n🦋",reply_markup=reply_markup_lzdv)
         # Delete callback query message
             await query.answer()
@@ -1279,7 +1279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                        ]
             reply_markup_lzdv = InlineKeyboardMarkup(btn_lzdv)
             reply_markup = InlineKeyboardMarkup(btn)
-            await client.send_message(int(user_id), f"**Yᴏᴜʀ RᴇQᴜᴇꜱᴛ Aᴄᴄᴇᴘᴛᴇᴅ ✅  `{movie}`Movie \n\nआपका अनुरोध स्वीकार किया गया ✅\n\n♻ Pʟᴇᴀꜱᴇ Wᴀɪᴛ..♻**", reply_markup=reply_markup)
+            await client.send_message(int(user_id), f"Yᴏᴜʀ RᴇQᴜᴇꜱᴛ Aᴄᴄᴇᴘᴛᴇᴅ ✅  `{movie}`Movie \n\nआपका अनुरोध स्वीकार किया गया ✅\n\n♻ Pʟᴇᴀꜱᴇ Wᴀɪᴛ..♻", reply_markup=reply_markup)
             await query.edit_message_text(text=f"- __**User notified successfully sweetie...✅**__\n\n⏳**Status** : Request Recieved 🖊.\n🪪**UserID** : `{user_id}`\n🎞**Content** : `{movie}`\n\n\n🦋",reply_markup=reply_markup_lzdv)
         # Delete callback query message
             await query.answer()
